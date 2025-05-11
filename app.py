@@ -14,7 +14,49 @@ st.markdown(
     """
     <style>
     body {
-        background: linear-gradient(to bottom right, #f0f0f0, #dcdcdc);
+        background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+        color: #fff;
+    }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
+    }
+    .stTextInput input {
+        background-color: #ffebcd;
+        color: #333;
+        border: 2px solid #ff7e5f;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .stTextInput input:focus {
+        border-color: #feb47b;
+    }
+    .stSubheader {
+        color: #fff;
+    }
+    .stMarkdown {
+        color: #fff;
+    }
+    .stSuccess {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    .stError {
+        background-color: #ff4d4d;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
     }
     </style>
     """,
