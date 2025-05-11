@@ -28,7 +28,7 @@ st.markdown(
     }
 
     .css-1cpxqw2.edgvbvh3 {
-        background-color: #38b000 !important; /* زرار Start Diagnosis */
+        background-color: #F5F5DC !important; /* زرار Start Diagnosis */
         color: white !important;
     }
     </style>
