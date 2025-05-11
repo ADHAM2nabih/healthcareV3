@@ -14,20 +14,14 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f3e8ff; /* بنفسجي فاتح للخلفية */
+        background-color: #f3e8ff; /* خلفية بنفسجي فاتح */
     }
 
     h1, h2, h3, h4, h5, h6, p, label, div, span {
-        color: #2e1065 !important; /* لون غامق للنص */
+        color: #2e1065 !important; /* لون النص */
     }
 
-    .css-1n76uvr {
-        background-color: #fff0f6 !important; /* input box */
-        border: 1px solid #d63384 !important;
-        color: #2e1065 !important;
-    }
-
-    .css-1cpxqw2.edgvbvh3 {
+    [data-testid="stButton"] button {
         background-color: #e9d5ff !important; /* بنفسجي فاتح */
         color: #4c1d95 !important;
         border: none;
@@ -35,8 +29,15 @@ st.markdown(
         font-weight: bold;
     }
 
-    .css-1cpxqw2.edgvbvh3:hover {
+    [data-testid="stButton"] button:hover {
         background-color: #d8b4fe !important; /* hover أغمق شوية */
+        color: #3b0764 !important;
+    }
+
+    [data-testid="stTextInput"] {
+        background-color: #fff0f6 !important;
+        border: 1px solid #d63384 !important;
+        color: #2e1065 !important;
     }
     </style>
     """,
