@@ -38,6 +38,18 @@ st.markdown(
     .css-1cpxqw2.edgvbvh3:hover {
         background-color: #d8b4fe !important; /* hover أغمق شوية */
     }
+
+    /* Custom styles for Start and Diagnosis buttons */
+    .stButton>button {
+        background-color: #d0c9ff !important; /* لون فاتح للأزرار */
+        color: #2e1065 !important; /* لون غامق للنص */
+        border-radius: 8px !important;
+        font-weight: bold !important;
+    }
+
+    .stButton>button:hover {
+        background-color: #b2aaff !important; /* أغمق شوية عند المرور على الزر */
+    }
     </style>
     """,
     unsafe_allow_html=True
