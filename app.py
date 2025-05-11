@@ -14,7 +14,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f3e8ff; /* بنفسجي فاتح للخلفية */
+        background-color: #483D8B; /* بنفسجي فاتح للخلفية */
     }
 
     h1, h2, h3, h4, h5, h6, p, label, div, span {
