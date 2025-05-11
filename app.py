@@ -18,7 +18,7 @@ st.markdown(
     }
 
     h1, h2, h3, h4, h5, h6, p, label, div, span {
-        color: #2e1065 !important; /* لون غامق للنص */
+        color: #ADD8E6 !important; /* لون غامق للنص */
     }
 
     .css-1n76uvr {
