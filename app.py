@@ -13,25 +13,21 @@ st.set_page_config(page_title="AI Healthcare Assistant", layout="centered")
 st.markdown(
     """
     <style>
-    /* خلفية الصفحة */
     .stApp {
-        background-color: #f3e8ff; /* بنفسجي فاتح */
+        background-color: #f3e8ff; /* بنفسجي فاتح للخلفية */
     }
 
-    /* لون النصوص */
     h1, h2, h3, h4, h5, h6, p, label, div, span {
-        color: #2e1065 !important; /* بنفسجي غامق */
+        color: #2e1065 !important; /* لون غامق للنص */
     }
 
-    /* صندوق الإدخال (Input Text Field) */
-    [data-testid="stTextInput"] {
-        background-color: #fff0f6 !important;
+    .css-1n76uvr {
+        background-color: #fff0f6 !important; /* input box */
         border: 1px solid #d63384 !important;
         color: #2e1065 !important;
     }
 
-    /* الزرار الأساسي (Next, Start Diagnosis, إلخ) */
-    [data-testid="stButton"] button {
+    .css-1cpxqw2.edgvbvh3 {
         background-color: #e9d5ff !important; /* بنفسجي فاتح */
         color: #4c1d95 !important;
         border: none;
@@ -39,10 +35,8 @@ st.markdown(
         font-weight: bold;
     }
 
-    /* عند تمرير الماوس على الزر */
-    [data-testid="stButton"] button:hover {
-        background-color: #d8b4fe !important; /* بنفسجي أغمق شوية */
-        color: #3b0764 !important;
+    .css-1cpxqw2.edgvbvh3:hover {
+        background-color: #d8b4fe !important; /* hover أغمق شوية */
     }
     </style>
     """,
