@@ -14,11 +14,11 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f3e8ff; /* بنفسجي فاتح */
+        background-color: #f3e8ff; /* بنفسجي فاتح للخلفية */
     }
 
     h1, h2, h3, h4, h5, h6, p, label, div, span {
-        color: #2e1065 !important; /* بنفسجي غامق */
+        color: #2e1065 !important; /* لون غامق للنص */
     }
 
     .css-1n76uvr {
@@ -28,20 +28,21 @@ st.markdown(
     }
 
     .css-1cpxqw2.edgvbvh3 {
-        background-color: #a855f7 !important; /* بنفسجي نيون */
-        color: white !important;
+        background-color: #e9d5ff !important; /* بنفسجي فاتح */
+        color: #4c1d95 !important;
         border: none;
         border-radius: 8px;
         font-weight: bold;
     }
 
     .css-1cpxqw2.edgvbvh3:hover {
-        background-color: #9333ea !important;
+        background-color: #d8b4fe !important; /* hover أغمق شوية */
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 # ====== Load Models, Encoders, Tokenizers ======
 @st.cache_resource
 def load_model(path):
