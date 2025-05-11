@@ -13,14 +13,24 @@ st.set_page_config(page_title="AI Healthcare Assistant", layout="centered")
 st.markdown(
     """
     <style>
+    /* خلفية الصفحة */
     .stApp {
-        background-color: #f3e8ff; /* خلفية بنفسجي فاتح */
+        background-color: #f3e8ff; /* بنفسجي فاتح */
     }
 
+    /* لون النصوص */
     h1, h2, h3, h4, h5, h6, p, label, div, span {
-        color: #2e1065 !important; /* لون النص */
+        color: #2e1065 !important; /* بنفسجي غامق */
     }
 
+    /* صندوق الإدخال (Input Text Field) */
+    [data-testid="stTextInput"] {
+        background-color: #fff0f6 !important;
+        border: 1px solid #d63384 !important;
+        color: #2e1065 !important;
+    }
+
+    /* الزرار الأساسي (Next, Start Diagnosis, إلخ) */
     [data-testid="stButton"] button {
         background-color: #e9d5ff !important; /* بنفسجي فاتح */
         color: #4c1d95 !important;
@@ -29,20 +39,16 @@ st.markdown(
         font-weight: bold;
     }
 
+    /* عند تمرير الماوس على الزر */
     [data-testid="stButton"] button:hover {
-        background-color: #d8b4fe !important; /* hover أغمق شوية */
+        background-color: #d8b4fe !important; /* بنفسجي أغمق شوية */
         color: #3b0764 !important;
-    }
-
-    [data-testid="stTextInput"] {
-        background-color: #fff0f6 !important;
-        border: 1px solid #d63384 !important;
-        color: #2e1065 !important;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 # ====== Load Models, Encoders, Tokenizers ======
 @st.cache_resource
