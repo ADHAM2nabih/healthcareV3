@@ -41,7 +41,7 @@ st.markdown(
 
     /* Custom styles for Start and Diagnosis buttons */
     .stButton>button {
-        background-color: #d0c9ff !important; /* لون فاتح للأزرار */
+        background-color: #8B008B !important; /* لون فاتح للأزرار */
         color: #8B008B !important; /* لون غامق للنص */
         border-radius: 8px !important;
         font-weight: bold !important;
