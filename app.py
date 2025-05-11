@@ -5,9 +5,17 @@ import numpy as np
 from collections import Counter
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
+# ====== Page Style ======
+st.markdown("""
+    <style>
+    body {
+        background: linear-gradient(to right, #f0f0f0, #d3d3d3);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # ====== Load Models, Encoders, Tokenizers ======
 @st.cache_resource
-
 def load_model(path):
     try:
         return joblib.load(path)
@@ -16,7 +24,6 @@ def load_model(path):
         return None
 
 @st.cache_resource
-
 def load_encoder(path):
     try:
         return joblib.load(path)
@@ -25,7 +32,6 @@ def load_encoder(path):
         return None
 
 @st.cache_resource
-
 def load_tokenizer(path):
     try:
         return joblib.load(path)
@@ -71,7 +77,7 @@ model_type_mapping = {
     '3c': 'LSTM',
 }
 
-# ====== API Request Function ======
+# ====== API Request Function for Questions ======
 def get_next_question(qa_history):
     conversation = ""
     for i in range(1, len(qa_history), 2):
@@ -94,7 +100,7 @@ Next question:
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "openai/gpt-3.5-turbo-0125",  # or another working model
+        "model": "openai/gpt-3.5-turbo-0125",
         "messages": [{"role": "user", "content": prompt}]
     }
 
@@ -106,6 +112,34 @@ Next question:
     except Exception as e:
         return f"⚠️ Error getting question: {str(e)}\n{response.text if response else ''}"
 
+# ====== Specialist Recommendation API ======
+def get_specialist_recommendation(user_description):
+    prompt = f"""
+A user has described their symptoms as follows:
+\"{user_description}\"
+
+Based on these symptoms, write a short report (2 sentences max) in English:
+1. Recommend a medical specialty the user should visit.
+2. Give one brief health tip they can follow until they see a doctor.
+"""
+
+    api_url = "https://openrouter.ai/api/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {st.secrets['general']['OPENROUTER_API_KEY']}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "model": "openai/gpt-3.5-turbo-0125",
+        "messages": [{"role": "user", "content": prompt}]
+    }
+
+    try:
+        response = requests.post(api_url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+        return data['choices'][0]['message']['content'].strip()
+    except Exception as e:
+        return f"⚠️ Error getting specialist advice: {str(e)}"
 
 # ====== Streamlit UI ======
 st.title("🧠 AI Healthcare Assistant")
@@ -117,7 +151,7 @@ if "step" not in st.session_state:
     st.session_state.max_qs = 0
 
 if st.session_state.step == 0:
-    st.session_state.max_qs = 6  # Fixed to 6 questions for better UX
+    st.session_state.max_qs = 6
     symptoms = st.text_input("What symptoms are you experiencing? (Example: headache, dizziness)")
     if st.button("Start Diagnosis") and symptoms:
         st.session_state.qa_pairs.append("What symptoms are you experiencing?")
@@ -136,11 +170,8 @@ elif st.session_state.step <= st.session_state.max_qs:
 
     if st.button("Next") and answer:
         st.session_state.qa_pairs.append(answer)
-
-        # Only keep answers that are not clear negatives
         if not any(neg in answer.lower() for neg in ["no", "not sure", "don't have"]):
             st.session_state.valid_answers.append(answer)
-
         st.session_state.step += 1
 
 else:
@@ -181,6 +212,13 @@ else:
         most_common_prediction, _ = prediction_count.most_common(1)[0]
         st.subheader(f"🔍 Predicted Disease: {most_common_prediction}")
         st.info("💡 Temporary advice: Please rest and drink plenty of fluids until you visit a doctor.")
+
+        # Specialist report
+        user_symptom_text = " ".join(st.session_state.valid_answers)
+        recommendation = get_specialist_recommendation(user_symptom_text)
+        st.subheader("🩺 Specialist Recommendation:")
+        st.write(recommendation)
+
     else:
         st.error("No predictions were made from any model.")
 
