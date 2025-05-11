@@ -14,7 +14,7 @@ st.markdown(
     """
     <style>
     body {
-        background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+        background-color: #d1a1f7; /* Light Purple background */
         color: #fff;
     }
     .stButton>button {
