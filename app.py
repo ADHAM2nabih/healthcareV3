@@ -15,7 +15,7 @@ st.markdown(
     <style>
     body {
         background-color: #d1a1f7; /* Light Purple background */
-        color: #fff;
+        color: black;
     }
     .stButton>button {
         background-color: #4CAF50;
