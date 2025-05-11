@@ -6,13 +6,20 @@ from collections import Counter
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # ====== Page Style ======
-st.markdown("""
+from streamlit.components.v1 import html
+st.set_page_config(page_title="AI Healthcare Assistant", layout="centered")
+
+# ===== Custom CSS for background =====
+st.markdown(
+    """
     <style>
     body {
-        background: linear-gradient(to right, #f0f0f0, #d3d3d3);
+        background: linear-gradient(to bottom right, #f0f0f0, #dcdcdc);
     }
     </style>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 # ====== Load Models, Encoders, Tokenizers ======
 @st.cache_resource
