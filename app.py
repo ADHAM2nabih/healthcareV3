@@ -13,56 +13,28 @@ st.set_page_config(page_title="AI Healthcare Assistant", layout="centered")
 st.markdown(
     """
     <style>
-    body {
-        background-color: #d1a1f7; /* Light Purple background */
-        color: black;
+    .stApp {
+        background-color: #f3e8ff; /* بنفسجي فاتح */
     }
-    .stButton>button {
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-        border-radius: 8px;
-        padding: 10px 20px;
-        margin-top: 10px;
-        transition: background-color 0.3s ease;
+
+    h1, h2, h3, h4, h5, h6, p, label, div, span {
+        color: #2e1065 !important; /* بنفسجي غامق للكتابة */
     }
-    .stButton>button:hover {
-        background-color: #45a049;
+
+    .css-1n76uvr {
+        background-color: #fff0f6 !important; /* input box */
+        border: 1px solid #d63384 !important;
+        color: #2e1065 !important;
     }
-    .stTextInput input {
-        background-color: #ffebcd;
-        color: #333;
-        border: 2px solid #ff7e5f;
-        border-radius: 8px;
-        padding: 10px;
-        font-size: 16px;
-    }
-    .stTextInput input:focus {
-        border-color: #feb47b;
-    }
-    .stSubheader {
-        color: #fff;
-    }
-    .stMarkdown {
-        color: #fff;
-    }
-    .stSuccess {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        border-radius: 8px;
-    }
-    .stError {
-        background-color: #ff4d4d;
-        color: white;
-        padding: 10px;
-        border-radius: 8px;
+
+    .css-1cpxqw2.edgvbvh3 {
+        background-color: #38b000 !important; /* زرار Start Diagnosis */
+        color: white !important;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-
 # ====== Load Models, Encoders, Tokenizers ======
 @st.cache_resource
 def load_model(path):
