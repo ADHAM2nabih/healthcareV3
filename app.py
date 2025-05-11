@@ -18,7 +18,7 @@ st.markdown(
     }
 
     h1, h2, h3, h4, h5, h6, p, label, div, span {
-        color: #2e1065 !important; /* بنفسجي غامق للكتابة */
+        color: #2e1065 !important; /* بنفسجي غامق */
     }
 
     .css-1n76uvr {
@@ -28,8 +28,15 @@ st.markdown(
     }
 
     .css-1cpxqw2.edgvbvh3 {
-        background-color: #F5F5DC !important; /* زرار Start Diagnosis */
+        background-color: #a855f7 !important; /* بنفسجي نيون */
         color: white !important;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .css-1cpxqw2.edgvbvh3:hover {
+        background-color: #9333ea !important;
     }
     </style>
     """,
