@@ -14,7 +14,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #483D8B; /* بنفسجي فاتح للخلفية */
+        background-color: #22313f; /* بنفسجي فاتح للخلفية */
     }
 
     h1, h2, h3, h4, h5, h6, p, label, div, span {
@@ -22,7 +22,7 @@ st.markdown(
     }
 
     .css-1n76uvr {
-        background-color: #F0FFFF !important; /* input box */
+        background-color: #e4f1fe !important; /* input box */
         border: 1px solid #d63384 !important;
         color: #2e1065 !important;
     }
@@ -41,7 +41,7 @@ st.markdown(
 
     /* Custom styles for Start and Diagnosis buttons */
     .stButton>button {
-        background-color: #8B008B !important; /* لون فاتح للأزرار */
+        background-color: #8dc6ff !important; /* لون فاتح للأزرار */
         color: #8B008B !important; /* لون غامق للنص */
         border-radius: 8px !important;
         font-weight: bold !important;
