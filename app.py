@@ -22,7 +22,7 @@ st.markdown(
     }
 
     .css-1n76uvr {
-        background-color: #fff0f6 !important; /* input box */
+        background-color: #F0FFFF !important; /* input box */
         border: 1px solid #d63384 !important;
         color: #2e1065 !important;
     }
