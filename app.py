@@ -28,7 +28,7 @@ st.markdown(
     }
 
     .css-1cpxqw2.edgvbvh3 {
-        background-color: #e9d5ff !important; /* بنفسجي فاتح */
+        background-color: #8B008B !important; /* بنفسجي فاتح */
         color: #4c1d95 !important;
         border: none;
         border-radius: 8px;
